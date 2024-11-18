@@ -1,0 +1,7 @@
+{
+  "name": "registroweb",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

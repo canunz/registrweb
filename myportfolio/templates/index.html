@@ -1,0 +1,346 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegistrAPP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2C1E42;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .header {
+            background-color: #2C1E42;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+        }
+
+        .menu a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .phone-container {
+            margin-bottom: 40px;
+        }
+
+        .phone-image {
+            max-width: 300px;
+            transform: rotate(-12deg);
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .app-download h1, .app-download h2 {
+            margin-bottom: 15px;
+        }
+
+        .download-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 280px;
+            padding: 15px 30px;
+            border: 2px solid white;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .accessibility-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #FFD700;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #2C1E42;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #accessibility-menu {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            color: #2C1E42;
+            border-radius: 10px;
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: #2C1E42;
+        }
+
+        .accessibility-widget {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 6px;
+        }
+
+        .accessibility-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .accessibility-buttons button {
+            width: 100%;
+            padding: 10px;
+            text-align: left;
+            background-color: #f5f5f5;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .accessibility-buttons button:hover {
+            background-color: #e5e5e5;
+        }
+
+        @media (max-width: 768px) {
+            .app-download h1 {
+                font-size: 28px;
+            }
+            
+            .app-download h2 {
+                font-size: 24px;
+            }
+            
+            .download-btn {
+                width: 250px;
+            }
+            
+            .phone-image {
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">RegistrAPP</a>
+            <nav class="navbar">
+            </nav>
+            <div class="menu">
+                <a href="{% url 'admin_login' %}">Login Administrador/a</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="phone-container">
+            <img src="{% static 'img/celular.png' %}" alt="Vivo Duoc App" class="phone-image">
+        </div>
+
+        <div class="app-download">
+            <h1>Descarga la Nueva App</h1>
+            <h2>RegistrAPP</h2>
+            <div class="download-buttons">
+                <a href="#" class="download-btn">
+                    <i class="fas fa-download"></i> Descargar para Apple
+                </a>
+                <a href="#" class="download-btn">
+                    <i class="fas fa-download"></i> Descargar para Android
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <button class="accessibility-btn" onclick="toggleAccessibilityMenu()">
+        <i class="fas fa-universal-access"></i>
+    </button>
+
+    <div id="accessibility-menu">
+        <button class="close-btn" onclick="toggleAccessibilityMenu()">
+            <i class="fas fa-times"></i>
+        </button>
+        <h3>Menú de Accesibilidad (CTRL+U)</h3>
+        <div class="accessibility-widget">
+            <button id="toggle-large-text" onclick="toggleLargeText()">Activar XL Widget de gran tamaño</button>
+        </div>
+        <div class="accessibility-buttons">
+            <button id="toggle-read-page" onclick="toggleReadPage()">Leer página</button>
+            <button id="toggle-contrast" onclick="toggleContrast()">Contraste +</button>
+            <button id="toggle-intelligent-contrast" onclick="toggleIntelligentContrast()">Contraste inteligente</button>
+            <button id="toggle-highlight-links" onclick="toggleHighlightLinks()">Resaltar enlaces</button>
+            <button id="toggle-increase-text-size" onclick="toggleIncreaseTextSize()">Agrandar texto</button>
+            <button id="toggle-adjust-text-spacing" onclick="toggleAdjustTextSpacing()">Espaciado de texto</button>
+        </div>
+    </div>
+
+    <script>
+        // Variables de estado para activar/desactivar funcionalidades
+        let largeText = false;
+        let contrast = false;
+        let intelligentContrast = false;
+        let highlightedLinks = false;
+        let textSizeIncreased = false;
+        let textSpacingIncreased = false;
+
+        const synth = window.speechSynthesis;
+        let isReading = false;
+        let currentUtterance = null;
+        let readPageEnabled = true; // Estado de habilitación de la lectura de la página
+
+        function toggleAccessibilityMenu() {
+            const accessibilityMenu = document.getElementById('accessibility-menu');
+            accessibilityMenu.style.display = accessibilityMenu.style.display === 'none' || accessibilityMenu.style.display === '' ? 'block' : 'none';
+        }
+
+        function toggleLargeText() {
+            largeText = !largeText;
+            document.body.style.fontSize = largeText ? '22px' : '';
+            document.getElementById('toggle-large-text').textContent = largeText ? 'Desactivar XL Widget' : 'Activar XL Widget de gran tamaño';
+        }
+
+        function toggleReadPage() {
+            if (readPageEnabled) {
+                if (isReading) {
+                    stopReading();
+                } else {
+                    startReading();
+                }
+            }
+        }
+
+        function startReading() {
+            const text = document.body.innerText;
+            currentUtterance = new SpeechSynthesisUtterance(text);
+            currentUtterance.lang = 'es-ES';
+            synth.speak(currentUtterance);
+            isReading = true;
+            document.getElementById('toggle-read-page').textContent = 'Detener lectura';
+        }
+
+        function stopReading() {
+            synth.cancel();
+            isReading = false;
+            document.getElementById('toggle-read-page').textContent = 'Leer página';
+        }
+
+        function toggleContrast() {
+            contrast = !contrast;
+            document.body.style.backgroundColor = contrast ? 'black' : '#2C1E42';
+            // Mantener el texto blanco incluso al desactivar el contraste
+            document.body.style.color = contrast ? 'white' : 'white';
+            document.getElementById('toggle-contrast').textContent = contrast ? 'Desactivar Contraste +' : 'Activar Contraste +';
+        }
+        
+
+        function toggleIntelligentContrast() {
+            intelligentContrast = !intelligentContrast;
+            if (intelligentContrast) {
+                document.body.style.filter = 'invert(1)';
+            } else {
+                document.body.style.filter = '';
+            }
+            document.getElementById('toggle-intelligent-contrast').textContent = intelligentContrast ? 'Desactivar Contraste Inteligente' : 'Activar Contraste Inteligente';
+        }
+
+        function toggleHighlightLinks() {
+            highlightedLinks = !highlightedLinks;
+            const links = document.querySelectorAll('a');
+            links.forEach(link => {
+                link.style.backgroundColor = highlightedLinks ? '#FFD700' : '';
+            });
+            document.getElementById('toggle-highlight-links').textContent = highlightedLinks ? 'Desactivar Resaltado de Enlaces' : 'Activar Resaltado de Enlaces';
+        }
+
+        function toggleIncreaseTextSize() {
+            textSizeIncreased = !textSizeIncreased;
+            document.body.style.fontSize = textSizeIncreased ? '18px' : '';
+            document.getElementById('toggle-increase-text-size').textContent = textSizeIncreased ? 'Reducir tamaño de texto' : 'Agrandar texto';
+        }
+
+        function toggleAdjustTextSpacing() {
+            textSpacingIncreased = !textSpacingIncreased;
+            document.body.style.letterSpacing = textSpacingIncreased ? '2px' : '';
+            document.getElementById('toggle-adjust-text-spacing').textContent = textSpacingIncreased ? 'Reducir espaciado de texto' : 'Ajustar espaciado de texto';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "name": "registroweb",
+  "version": "1.0.0",
+  "description": "Aplicación para registro de eventos",
+  "scripts": {
+    "start": "ionic serve",
+    "build": "ionic build",
+    "android": "ionic capacitor run android"
+  },
+  "dependencies": {
+    "@capacitor/android": "6.1.2",
+    "@capacitor/app": "6.0.1",
+    "@capacitor/core": "^6.1.2",
+    "@capacitor/haptics": "6.0.1",
+    "@capacitor/keyboard": "6.0.2",
+    "@capacitor/status-bar": "6.0.1",
+    "@ionic/angular": "^8.4.0"
+  },
+  "devDependencies": {
+    "@angular/cli": "^18.2.12",
+    "@capacitor/cli": "^6.1.2"
+  },
+  "capacitor": {
+    "appId": "io.ionic.registroweb",
+    "appName": "registroweb",
+    "webDir": "www",
+    "bundledWebRuntime": false
+  }
+}
